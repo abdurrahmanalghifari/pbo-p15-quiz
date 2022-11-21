@@ -21,13 +21,13 @@ public class quiz2 {
         System.out.println("-------------------oOo------------------");
         if (input.equals("1")) {
             System.out.println("*** Data Warga ***");
-            System.out.println("Masukan Nama");
+            System.out.println("Masukkan Nama");
             nama = sc.nextLine();
-            System.out.println("Masukan NIK");
+            System.out.println("Masukkan NIK");
             nik = sc.nextLine();
-            System.out.println("Masukan Alamat");
+            System.out.println("Masukkan Alamat");
             alamat = sc.nextLine();
-            System.out.println("Masukan No. Tlp");
+            System.out.println("Masukkan No. Tlp");
             System.out.print("+62 ");
             telp = sc.nextLine();
             // simpan input di object data
@@ -35,20 +35,20 @@ public class quiz2 {
             // next step
             System.out.println("-------------------oOo------------------");
             System.out.println("*** Data Pekerjaan ***");
-            System.out.println("Masukan Pekerjaan");
+            System.out.println("Masukkan Pekerjaan");
             pekerjaan = sc.nextLine();
-            System.out.println("Masukan Alamat Kantor");
+            System.out.println("Masukkan Alamat Kantor");
             kantor = sc.nextLine();
             // simpat input di object data
             iuran.data(pekerjaan, kantor);
             // next step
             System.out.println("-------------------oOo------------------");
             System.out.println("*** Data Status ***");
-            System.out.println("Masukan Status");
+            System.out.println("Masukkan Status");
             status = sc.nextLine();
-            System.out.println("Masukan Nama Suami/Istri");
+            System.out.println("Masukkan Nama Suami/Istri");
             menikah = sc.nextLine();
-            System.out.println("Masukan Jumlah Anak");
+            System.out.println("Masukkan Jumlah Anak");
             jumlah_anak = sc.nextLine();
             // simpan input di object data
             iuran.data(status, menikah, jumlah_anak);
@@ -59,17 +59,17 @@ public class quiz2 {
                 System.out.println("-------------------oOo------------------");
                 System.out.println("*** Data Iuran Pokok ***");
                 System.out.println("NIK => " + iuran.nik);
-                System.out.println("Masukan Iuran Sampah");
+                System.out.println("Masukkan Iuran Sampah");
                 sampah = Integer.parseInt(sc.nextLine());
-                System.out.println("Masukan Iuran Keamanan");
+                System.out.println("Masukkan Iuran Keamanan");
                 keamanan = Integer.parseInt(sc.nextLine());
                 System.out.println("");
                 System.out.println("*** Data Iuran Sekunder ***");
-                System.out.println("Masukan Sumbangan");
+                System.out.println("Masukkan Sumbangan");
                 sumbangan = Integer.parseInt(sc.nextLine());
                 System.out.println("Lanjutkan Bayar Iuran ?");
                 input = sc.nextLine();
-                if (input.equalsIgnoreCase("tidak")) {
+                if (input.equalsIgnoreCase("tidak")||input.equalsIgnoreCase("t")) {
                     System.out.println("");
                     String format = "||%1$-30s||%2$-20s\n";
                     System.out.format(format," NIK"," "+iuran.nik);
@@ -77,6 +77,7 @@ public class quiz2 {
                     System.out.format(format," Total Pembayaran Iuran Warga"," Rp. "+iuran.data(sampah, keamanan, sumbangan));
                     System.out.println("Terimakasih " + iuran.nama + " Iuran Anda Sudah di Bayarkan");
                 } else {
+                    System.exit(0);
                 }
 
             }
